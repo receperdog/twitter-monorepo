@@ -2,7 +2,6 @@ package com.rh.authservice.service.concrete;
 
 import com.rh.authservice.model.User;
 import com.rh.authservice.service.UserService;
-import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -11,10 +10,13 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 
 @Service
-@AllArgsConstructor
 public class UserSecurityServiceImpl implements UserDetailsService {
 
     private final UserService userService;
+
+    public UserSecurityServiceImpl(UserService userService) {
+        this.userService = userService;
+    }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

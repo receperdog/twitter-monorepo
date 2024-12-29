@@ -51,7 +51,6 @@ public class User extends BaseEntity implements UserDetails {
         return this.password;
     }
 
-    // Explicitly overriding getUsername to ensure proper implementation
     @Override
     public String getUsername() {
         return this.username;
@@ -78,7 +77,7 @@ public class User extends BaseEntity implements UserDetails {
     }
 
     @Override
-    public Set<Role> getAuthorities(){
+    public Set<Role> getAuthorities() {
         return this.authorities;
     }
 }

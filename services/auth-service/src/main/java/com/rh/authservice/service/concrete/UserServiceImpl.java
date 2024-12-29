@@ -23,8 +23,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void saveUser(UserRegisterRequest user) {
-        User newUser = User.builder()
-                .username(user.username())
+
+        User newUser = User.builder().username(user.username())
                 .name(user.name())
                 .email(user.email())
                 .password(passwordEncoder.encode(user.password()))
